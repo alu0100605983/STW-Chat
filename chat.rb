@@ -8,12 +8,27 @@ set :session_secret, '*&(#234a)'
 
 
 chat = ['welcome..']
+user = Array.new()
 
-get('/') { erb :login }
+get '/' do
+  if !session[:name]
+    erb :login
+  else
+    erb :chat
+  end
+end
 
 post '/' do
-  session[:name] = params[:username]
-  erb :index
+
+  if (user.include?(param[:username]))
+    redirect '/'
+  else
+    name = params[:username]
+    session[:name] = name
+    user << name
+    puts user
+    erb :index
+  end
 end
 
 
@@ -35,4 +50,5 @@ get '/update' do
       <span data-last="<%= @last %>"></span>
   HTML
 end
+
 
