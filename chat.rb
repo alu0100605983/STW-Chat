@@ -18,17 +18,28 @@ get '/' do
   end
 end
 
+get '/chat' do 
+  erb :chat
+end 
+
 post '/' do
 
-  if (user.include?(param[:username]))
+  if (user.include?(params[:username]))
     redirect '/'
   else
     name = params[:username]
     session[:name] = name
     user << name
     puts user
-    erb :index
+    erb :chat
   end
+end
+
+
+get '/logout' do
+  user.delete(session[:name])
+  session.clear
+  redirect '/'
 end
 
 
@@ -51,4 +62,12 @@ get '/update' do
   HTML
 end
 
-
+get '/user' do
+  return [404, {}, "Not an ajax request"] unless request.xhr?
+  @user = user
+  erb <<-'HTML', :layout => false
+      <% @user.each do |phrase| %>
+        <%= phrase %> <br />
+      <% end %>
+  HTML
+end
