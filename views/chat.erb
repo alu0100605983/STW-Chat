@@ -4,7 +4,7 @@
       #text{width:100%; font-size: 15px; padding: 5px; display: block;}
     </style>
     <link href="css/bootstrap.css" rel="stylesheet">	 
-	<link href="css/main.css" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet"> 
 	
   </head>
   
@@ -14,26 +14,34 @@
 	  <div >            </div>
 	</div>
 
+</div>
 
-
-  </div>
-  <div class="row">
-	<div class="col-md-8">
-	  <div class="chateando borde">	  
-		<div id="chat"></div>			
-	  </div>
+	<div class="row">
+		<div class="col-md-8">
+	  		<div class="chateando borde">	  
+				<div id="chat"></div>			
+	  		</div>
 	  
-	  <div class="chateando1 borde">	  
-		<div id="chat"></div>
-			<p> </p>
-			<input id="text" placeholder="Write then press Enter." autofocus />
-			<button id="enviar" type="submit" class="btn btn-success btn-small bye">Enviar</button>	
-			<a id="lgout" class="btn btn-small btn-info bye" href="/logout">Logout</a>	
-	  </div>
-	
+	  		<div class="chateando1 borde">	  
+				<div id="chat"></div>
+				<p> </p>
+				<input id="text" placeholder="Write then press Enter." autofocus />
+				<button id="enviar" type="submit" class="btn btn-success btn-small bye">Enviar</button>	
+				<a id="lgout" class="btn btn-small btn-info bye" href="/logout">Logout</a>	
+	  		</div>
+
+	  		<div class = "users"> Usuarios conectados
+	  			<div class = "users borde">
+	  				<p> Usuarios conectados </p> <br>
+	  				<div id ="user"> </div>
+	  			</div>
+
+		</div>
 	</div>
-	
-  </body>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src= "chat.js"></script>	
+    <script src = "/js/user.js"></script>
+</body>
   
 </html>
 

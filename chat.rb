@@ -1,5 +1,6 @@
 require 'sinatra' 
 require 'sinatra/reloader' if development?
+
 #set :port, 3000
 #set :environment, :production
 
@@ -35,6 +36,9 @@ post '/' do
   end
 end
 
+get '/prueba' do
+  erb :prueba
+end
 
 get '/logout' do
   user.delete(session[:name])
