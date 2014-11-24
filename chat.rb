@@ -36,9 +36,7 @@ post '/' do
   end
 end
 
-get '/prueba' do
-  erb :prueba
-end
+
 
 get '/logout' do
   user.delete(session[:name])

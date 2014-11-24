@@ -1,11 +1,11 @@
-+(function() {
-+   setInterval(
-+    function(){
-+      $.get('/user',
-+        function(response){
-+          $('#user').replaceWith(response);
-+        }
-+      );
-+    },
-+  1000);
-+})();
+(function() {
+   setInterval(
+    function(){
+      $.get('/user',
+        function(response){
+          $('#user').replaceWith(response);
+        }
+      );
+    },
+  1000);
+})();
