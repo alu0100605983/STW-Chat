@@ -5,13 +5,15 @@ require_relative '../chat.rb'
 require 'rack/test'
 require 'rubygems'
 require 'rspec'
+require 'test/unit'
+require 'minitest/autorun'
 
 include Rack::Test::Methods
-describe "Testing specs" do
 
    def app
       Sinatra::Application
    end
+describe "Testing specs" do
     
     it "Sin iniciar session" do
        get '/', {}, 'rack.session' => { :name => 'Testing' }
