@@ -5,6 +5,11 @@ task :server do
   sh "rackup"
 end
 
+desc "tests"
+task :test do
+	sh "ruby test/test.rb"
+end
+
 desc "make a non Ajax request via curl"
 task :noajax do
   sh "curl -v http://localhost:4567/update"
